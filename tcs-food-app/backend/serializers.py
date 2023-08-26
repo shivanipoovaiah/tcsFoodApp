@@ -20,7 +20,7 @@ class CustomRegisterSerializer(RegisterSerializer):
     address = serializers.CharField(max_length=150, required=False)
     is_retailer = serializers.BooleanField()
 
-    # Define transaction.atomic to rollback the save operation in case of error
+    # Define transaction.atomic to rollback the save operation in case of error 
     @transaction.atomic
     def save(self, request):
         user = super().save(request)
